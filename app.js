@@ -179,7 +179,9 @@ function checkResult(){
             over.classList.add("over");
             over.classList.add("container-fluid");
             over.innerText = "O - WON!";
-            body.append(over);
+            setTimeout(()=>{
+                body.append(over);
+            }, 100);
             setTimeout(()=>{
                 over.remove();
             }, 2000);
@@ -194,7 +196,9 @@ function checkResult(){
             over.classList.add("over");
             over.classList.add("container-fluid");
             over.innerText = "X - WON!";
-            body.append(over);
+            setTimeout(()=>{
+                body.append(over);
+            }, 100);
             setTimeout(()=>{
                 over.remove();
             }, 2000);
@@ -209,7 +213,9 @@ function checkResult(){
             over.classList.add("over");
             over.classList.add("container-fluid");
             over.innerText = "DRAW";
-            body.append(over);
+            setTimeout(()=>{
+                body.append(over);
+            }, 100);
             setTimeout(()=>{
                 over.remove();
             }, 2000);
