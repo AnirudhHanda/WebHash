@@ -42,8 +42,8 @@ function selectChoiceCross(){
     started = true;
     user = "cross";
     cross.classList.add("opacity");
-    userImg = "assets/zero.png";
-    compImg = "assets/cross.png";
+    userImg = "assets/cross.png";
+    compImg = "assets/zero.png";
 
     zero.removeEventListener("click", selectChoiceZero);
 }

@@ -1,3 +1,6 @@
+html{
+    font-size: 62.5%;
+}
 *{
     font-family: 'Asap', sans-serif;
     font-family: 'Caveat Brush', cursive;
@@ -75,49 +78,49 @@ body{
 }
 
 .outer{
-    height: 500px;
-    width: 500px;
+    height: 35rem;
+    width: 35rem;
     margin-top: 3rem;
 }
 
 .vertical{
-    height: 500px;
-    width: 500px;
+    height: 35rem;
+    width: 35rem;
     /* background-color: pink; */
     position: absolute;
 
 }
 .horizontal{
-    height: 500px;
-    width: 500px;
+    height: 35rem;
+    width: 35rem;
     /* background-color: blue; */
     position: absolute;
 }
 
 .vertical .line_one{
-    height: 450px;
-    width: 9px;
+    height: 30rem;
+    width: 0.7rem;
     background-color: #47a7bded;
     position: absolute;
     z-index: 2;
     left: 33.3%;
-    top: 4%;
+    top: 5%;
     border-radius: 40px;
 }
 .vertical .line_two{
-    height: 450px;
-    width: 9px;
+    height: 30rem;
+    width: 0.7rem;
     background-color: #47a7bded;
     position: absolute;
     z-index: 2;
     left: 66.6%;
-    top: 4%;
+    top: 5%;
     border-radius: 40px;
 }
 
 .horizontal .line_one{
-    width: 470px;
-    height: 9px;
+    width: 32rem;
+    height: 0.7rem;
     background-color: #47a7bded;
     position: absolute;
     z-index: 2;
@@ -126,8 +129,8 @@ body{
     border-radius: 40px;
 }
 .horizontal .line_two{
-    width: 470px;
-    height: 9px;
+    width: 32rem;
+    height: 0.7rem;
     background-color: #47a7bded;
     position: absolute;
     z-index: 2;
@@ -137,9 +140,9 @@ body{
 }
 
 .box{
-    height: 166.67px;
-    width: 166.67px;
-    /* background: pink; */
+    height: 11.667rem;
+    width: 11.667rem;
+    background: pink;
     position: relative;
     display: flex;
     justify-content: center;
@@ -147,7 +150,7 @@ body{
 }
 
 .div_one{
-    width: 500px;
+    width: 35rem;
     display: flex;
     justify-content: space-between;
 }
@@ -205,4 +208,96 @@ body{
     z-index: 5;
     top: 0.001%;
     font-size: 50px;
+}
+
+
+
+/* Media query for screens with a maximum width of 768px (typical for mobile screens) */
+@media (max-width: 450px) {
+    .selectBtns{
+        margin-top: 2rem;
+    }
+
+    .outer{
+        height: 35rem;
+        width: 30rem;
+        margin: 30% auto;
+        margin-left: 9%;
+
+    }
+    
+    .vertical{
+        height: 35rem;
+        width: 30rem;
+        /* background-color: pink; */
+        position: absolute;
+    
+    }
+    .horizontal{
+        height: 35rem;
+        width: 30rem;
+        /* background-color: blue; */
+        position: absolute;
+    }
+    
+    .vertical .line_one{
+        height: 35rem;
+        width: 0.7rem;
+        background-color: #47a7bded;
+        position: absolute;
+        z-index: 2;
+        left: 33.3%;
+        top: 5%;
+        border-radius: 40px;
+    }
+    .vertical .line_two{
+        height: 35rem;
+        width: 0.7rem;
+        background-color: #47a7bded;
+        position: absolute;
+        z-index: 2;
+        left: 66.6%;
+        top: 5%;
+        border-radius: 40px;
+    }
+    
+    .horizontal .line_one{
+        width: 32rem;
+        height: 0.7rem;
+        background-color: #47a7bded;
+        position: absolute;
+        z-index: 2;
+        top: 33.3%;
+        left: 2%;
+        border-radius: 40px;
+    }
+    .horizontal .line_two{
+        width: 32rem;
+        height: 0.7rem;
+        background-color: #47a7bded;
+        position: absolute;
+        z-index: 2;
+        top: 66.6%;
+        left: 2%;
+        border-radius: 40px;
+    }
+    
+    .box{
+        height: 12.667rem;
+        width: 9.8rem;
+        background: pink;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .div_one{
+        width: 31.5rem;
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    
+    
 }

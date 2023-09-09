@@ -66,7 +66,7 @@ The objective of Tic-Tac-Toe is to form a horizontal, vertical, or diagonal line
 
 You can try the game live by visiting the following link:
 
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-Play%20Now-brightgreen)](https://your-username.github.io/tic-tac-toe-game/)
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Play%20Now-brightgreen)](https://AnirudhHanda.github.io/WebHash/)
 
 ## 🌟 Features
 
@@ -86,7 +86,7 @@ This project is licensed under the MIT License. Feel free to clone, modify, and 
 
 ## 🔗 Link to GitHub Repo
 
-[![GitHub Repo](https://img.shields.io/badge/GitHub-View%20Repo-blue)](https://github.com/your-username/tic-tac-toe-game)
+[![GitHub Repo](https://img.shields.io/badge/GitHub-View%20Repo-blue)](https://github.com/AnirudhHanda/WebHash)
 
 ---
 
