@@ -3,6 +3,10 @@ let level = 0;
 let moves = 0;
 
 let body = document.querySelector("body");
+let twoPlayer = document.querySelector("#twoPlayer");
+let onePlayer = document.querySelector("#onePlayer");
+
+
 
 let arr = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight"];
 const winCombinations = [
@@ -24,12 +28,22 @@ userImg = "assets/cross.png";
 compImg = "assets/zero.png";
 // let randomPosIndex;
 
+let computerMode = true;
+
+twoPlayer.addEventListener("click", ()=>{
+    computerMode = false;
+})
+
+onePlayer.addEventListener("click", ()=>{
+    computerMode = true;
+})
+
 function selectChoiceCross(){
     started = true;
     user = "cross";
     cross.classList.add("opacity");
-    userImg = "assets/cross.png";
-    compImg = "assets/zero.png";
+    userImg = "assets/zero.png";
+    compImg = "assets/cross.png";
 
     zero.removeEventListener("click", selectChoiceZero);
 }
@@ -108,12 +122,12 @@ function userPush(){
 
     let element = document.querySelector(`#${select}`);
     let img = document.createElement("img");
-    img.src = userImg;
+    // img.src = userImg;
     img.style.height = "74px";
     img.style.width = "240px";
     // console.log(img);
     // console.log(select);
-    element.append(img);
+    // element.append(img);
     // started = true;
     clicked.removeEventListener("click", userPush);
     // select.appendChild(img);
@@ -122,12 +136,32 @@ function userPush(){
     cross.removeEventListener("click", selectChoiceCross);
     zero.removeEventListener("click", selectChoiceZero);
 
-    moves++;
-    checkResult();
+    if(computerMode){
+        img.src = userImg;
+        img.style.height = "74px";
+        img.style.width = "240px";
+        // console.log(img);
+        // console.log(select);
+        element.append(img);
+        moves++;
+        checkResult();
 
-    setTimeout(()=>{
-        smartComputerMove();
-    }, 200);
+        setTimeout(()=>{
+            smartComputerMove();
+        }, 200);
+    } else{
+        if(user == "zero"){
+            img.src = userImg;
+            element.append(img);
+            user = "cross";
+        } else{
+            img.src = compImg;
+            element.append(img);
+            user = "zero";
+        }
+        moves++;
+        checkResult();
+    }
 }
 
 for(div1 of divs){
@@ -141,11 +175,10 @@ function checkResult(){
     if(moves >=5){
         // check for a win condition
         if(checkWin(userImg)){
-            console.log("player wins");
-
             let over = document.createElement("div");
             over.classList.add("over");
-            over.innerText = "Player Wins";
+            over.classList.add("container-fluid");
+            over.innerText = "O - WON!";
             body.append(over);
             setTimeout(()=>{
                 over.remove();
@@ -159,7 +192,8 @@ function checkResult(){
 
             let over = document.createElement("div");
             over.classList.add("over");
-            over.innerText = "Computer Wins";
+            over.classList.add("container-fluid");
+            over.innerText = "X - WON!";
             body.append(over);
             setTimeout(()=>{
                 over.remove();
@@ -173,6 +207,7 @@ function checkResult(){
 
             let over = document.createElement("div");
             over.classList.add("over");
+            over.classList.add("container-fluid");
             over.innerText = "DRAW";
             body.append(over);
             setTimeout(()=>{
