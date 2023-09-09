@@ -24,8 +24,8 @@ let cross = document.querySelector(".cross");
 let zero = document.querySelector(".zero1");
 
 let user;
-userImg = "assets/cross.png";
-compImg = "assets/zero.png";
+let zeroImg = "assets/zero.png";
+let crossImg = "assets/cross.png";
 // let randomPosIndex;
 
 let computerMode = true;
@@ -151,11 +151,11 @@ function userPush(){
         }, 200);
     } else{
         if(user == "zero"){
-            img.src = userImg;
+            img.src = zeroImg;
             element.append(img);
             user = "cross";
         } else{
-            img.src = compImg;
+            img.src = crossImg;
             element.append(img);
             user = "zero";
         }
@@ -178,7 +178,11 @@ function checkResult(){
             let over = document.createElement("div");
             over.classList.add("over");
             over.classList.add("container-fluid");
-            over.innerText = "O - WON!";
+            if(userImg === zeroImg){
+                over.innerText = "O - WON!";
+            } else{
+                over.innerText = "X - WON!"
+            }
             setTimeout(()=>{
                 body.append(over);
             }, 100);
@@ -195,7 +199,11 @@ function checkResult(){
             let over = document.createElement("div");
             over.classList.add("over");
             over.classList.add("container-fluid");
-            over.innerText = "X - WON!";
+            if(compImg === zeroImg){
+                over.innerText = "O - WON!";
+            } else{
+                over.innerText = "X - WON!"
+            }
             setTimeout(()=>{
                 body.append(over);
             }, 100);

@@ -142,7 +142,7 @@ body{
 .box{
     height: 11.667rem;
     width: 11.667rem;
-    background: pink;
+    /* background: pink; */
     position: relative;
     display: flex;
     justify-content: center;
@@ -270,6 +270,7 @@ body{
         top: 33.3%;
         left: 2%;
         border-radius: 40px;
+        margin-left: -1rem;
     }
     .horizontal .line_two{
         width: 32rem;
@@ -280,12 +281,13 @@ body{
         top: 66.6%;
         left: 2%;
         border-radius: 40px;
+        margin-left: -1rem;
     }
     
     .box{
         height: 12.667rem;
         width: 9.8rem;
-        background: pink;
+        /* background: pink; */
         position: relative;
         display: flex;
         justify-content: center;
