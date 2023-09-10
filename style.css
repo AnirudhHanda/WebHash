@@ -11,20 +11,29 @@ html{
 }
 
 body{
-    background-color: #0CF574 !important;
+    background-color: var(--primaryBackground) !important;
+    transition: 0.8s !important;
+
 }
 
+/* .pageContainer{
+    transition: 4s !important;
+} */
+
 #nav_custom{
-    background-color: #0CF574 !important;
+    background-color: var(--primaryBackground) !important;
+    transition: 0.8s !important;
 }
 
 .navbar-nav{
     display: flex !important;
-    justify-content: space-evenly !important;
+    justify-content: space-between !important;
+    gap: 3em;
+    transition: 0.8s !important;
 }
-.navbar-nav button{
+/* .navbar-nav button{
     text-align: center;
-    background-color: #284B63;
+    background-color: var(--clr);
     color: white !important;
     font-size: 11px !important;
     width: 100px !important;
@@ -40,13 +49,106 @@ body{
 }
 .navbar-nav button:hover{
     transform: scale(1.1);
+} */
+
+:root{
+    --clr: #284B63;
+    --primaryBackground: #2CC990;
+    --linesColor: #239F72;
+    --clr1: #8FBFE0;
+    --overColor: #3F84E5;
 }
+
+.dark-mode{
+    --clr: #8FBFE0;
+    --primaryBackground: #1a1919;
+    --linesColor: #dddcdcae;
+    --clr1: #8FBFE0;
+    --overColor: #686b6d;
+}
+
+.navbar-nav a{
+    position: relative;
+    background-color: var(--linesColor);
+    color: var(--linesColor) !important;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 1.3em;
+    letter-spacing: 0.1em;
+    font-weight: 500;
+    padding: 10px 25px;
+    transition: 0.5s;
+    cursor: pointer;
+    text-align: center;
+    border: var(--linesColor);
+}
+
+.navbar-nav a:hover{
+    background: var(--clr);
+    color: var(--clr) !important;
+    letter-spacing: 0.25em;
+    box-shadow: 0px 0px 30px var(--clr);
+}
+
+.navbar-nav a:before{
+    content: "";
+    position: absolute;
+    inset: 2px;
+    background:var(--primaryBackground);
+}
+
+.navbar-nav a span{
+    position: relative;
+    z-index: 1;
+}
+
+.navbar-nav a i{
+    position: absolute;
+    inset: 0;
+    display: block;
+}
+
+.navbar-nav a i::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 80%;
+    width: 10px;
+    height: 4px;
+    background-color: var(--primaryBackground);
+    transform: translateX(-50%) skewX(325deg);
+    transition: 0.5s;
+}
+
+.navbar-nav a:hover i::before{
+    width: 16px;
+    left: 20%;
+}
+
+.navbar-nav a i::after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 20%;
+    width: 10px;
+    height: 4px;
+    background-color: var(--primaryBackground);
+    transform: translateX(-50%) skewX(325deg);
+    transition: 0.5s;
+}
+
+.navbar-nav a:hover i::after{
+    width: 16px;
+    left: 80%;
+}
+
 .navbar-brand img{
     transition: 0.5s;
 }
 .navbar-brand img:hover{
     transition: 0.5s;
     transform: rotate(5deg);
+    text-shadow: 0px 0px 20px var(--clr);
 }
 
 .selectBtns{
@@ -81,6 +183,7 @@ body{
     height: 35rem;
     width: 35rem;
     margin-top: 3rem;
+    /* margin-left: 36rem; */
 }
 
 .vertical{
@@ -99,8 +202,8 @@ body{
 
 .vertical .line_one{
     height: 30rem;
-    width: 0.7rem;
-    background-color: #47a7bded;
+    width: 0.4rem;
+    background-color: var(--linesColor);
     position: absolute;
     z-index: 2;
     left: 33.3%;
@@ -109,8 +212,8 @@ body{
 }
 .vertical .line_two{
     height: 30rem;
-    width: 0.7rem;
-    background-color: #47a7bded;
+    width: 0.4rem;
+    background-color: var(--linesColor);
     position: absolute;
     z-index: 2;
     left: 66.6%;
@@ -120,22 +223,24 @@ body{
 
 .horizontal .line_one{
     width: 32rem;
-    height: 0.7rem;
-    background-color: #47a7bded;
+    height: 0.4rem;
+    background-color: var(--linesColor);
     position: absolute;
     z-index: 2;
     top: 33.3%;
-    left: 2%;
+    left: 1%;
     border-radius: 40px;
+    /* margin-left: 0.2rem; */
 }
 .horizontal .line_two{
     width: 32rem;
-    height: 0.7rem;
-    background-color: #47a7bded;
+    height: 0.4rem;
+    background-color: var(--linesColor);
     position: absolute;
     z-index: 2;
     top: 66.6%;
-    left: 2%;
+    /* left: 1%; */
+    margin-left: 0.2rem;
     border-radius: 40px;
 }
 
@@ -203,14 +308,38 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #3F84E5;
+    background-color: var(--overColor);
     color: white;
-    z-index: 5;
+    z-index: 12;
     top: 0.001%;
     font-size: 50px;
+    transition: 1s;
 }
 
+.navbar-toggler{
+    border-color: var(--linesColor) !important;
+    transition: 0.5s;
+}
 
+.navbar-toggler i{
+    color: var(--linesColor) !important;
+    fill: var(--linesColor) !important;
+    /* background-color: var(--linesColor) !important; */
+    /* border: 2px solid white; */
+    /* stroke: white; */
+    /* border-color: white; */
+    transition: 0.5s;
+}
+.navbar-toggler i:hover{
+    color: var(--clr) !important;
+}
+.navbar-toggler:hover{
+    border-color: var(--clr);
+}
+
+/* #togglerBtn{
+    background-color: var(--linesColor) !important;
+} */
 
 /* Media query for screens with a maximum width of 768px (typical for mobile screens) */
 @media (max-width: 450px) {
@@ -242,8 +371,8 @@ body{
     
     .vertical .line_one{
         height: 35rem;
-        width: 0.7rem;
-        background-color: #47a7bded;
+        width: 0.4rem;
+        background-color: var(--linesColor);
         position: absolute;
         z-index: 2;
         left: 33.3%;
@@ -252,8 +381,8 @@ body{
     }
     .vertical .line_two{
         height: 35rem;
-        width: 0.7rem;
-        background-color: #47a7bded;
+        width: 0.4rem;
+        background-color: var(--linesColor);
         position: absolute;
         z-index: 2;
         left: 66.6%;
@@ -263,8 +392,8 @@ body{
     
     .horizontal .line_one{
         width: 32rem;
-        height: 0.7rem;
-        background-color: #47a7bded;
+        height: 0.4rem;
+        background-color: var(--linesColor);
         position: absolute;
         z-index: 2;
         top: 33.3%;
@@ -274,8 +403,8 @@ body{
     }
     .horizontal .line_two{
         width: 32rem;
-        height: 0.7rem;
-        background-color: #47a7bded;
+        height: 0.4rem;
+        background-color: var(--linesColor);
         position: absolute;
         z-index: 2;
         top: 66.6%;
@@ -302,4 +431,113 @@ body{
     
     
     
+}
+
+label{
+    width: 5.5rem;
+    height: 2.3rem;
+    position: relative;
+    background-color: #98eccd;
+    border-radius: 20px;
+    box-shadow: inset 0px 1px 8px #454745, inset 0px -1px 8px #8FBFE0;
+    top: 9px;
+    cursor: pointer;
+    transition: 0.3s;
+    /* margin-left: 0.1rem; */
+}
+label:after{
+    content: "";
+    width: 2rem;
+    height: 2rem;
+    position: absolute;
+    top: 2px;
+    left: 3px;
+    background: linear-gradient(180deg, #f9dd94, #fac748);
+    border-radius: 2rem;
+    transition: 0.3s;
+}
+input{
+    width: 0;
+    height: 0;
+    visibility: hidden;
+
+}
+input:checked + label{
+    background-color: #272827;
+}
+
+input:checked + label:after{
+    left: 5.2rem;
+    transform: translateX(-100%);
+    background: linear-gradient(180deg, #8e918e, #333533);
+    /* box-shadow: none; */
+    /* box-shadow: inset 0px 0px 0px #5d615d, inset 0px 0px 0px #8FBFE0; */
+}
+
+label:active:after{
+    width: 4.8rem;
+    transition: 0.5s;
+}
+
+label i{
+    position: absolute;
+    font-size: 1.55rem;
+    top: 0.3rem;
+    left: 0.4rem;
+    z-index: 9;
+}
+label i.sun{
+    left: 5.5px;
+    fill: #fff;
+    transition: 0.3s;
+    color: white;
+}
+label i.moon{
+    left: 3.7rem;
+    fill: #cecbcb;
+    transition: 0.3s;
+    color: white;
+}
+input:checked + label i.sun{
+    color: #aba7a7;
+}
+input:checked + label i.moon{
+    color: #aba7a7;
+}
+
+/* .dark-mode{
+    background-color: #333533 !important;
+} */
+
+
+/* Custom CSS to open the toggler menu from right to left and center-align content */
+/* Custom CSS to open the toggler menu from right to left and center-align content */
+@media (max-width: 991.98px) {
+    .navbar-collapse {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.9);
+        transition: right 0.3s ease;
+        z-index: 9999;
+        text-align: center; /* Center-align text content */
+        display: flex; /* Use flexbox for centering */
+        flex-direction: column; /* Stack children vertically */
+        justify-content: center; 
+        align-items: center; 
+        /* margin-bottom: 500px; */
+    }
+
+    .navbar-nav {
+        position: absolute;
+        bottom: 40%;
+        width: 100%;
+        text-align: center; /* Center-align text content in the navbar */
+    }
+
+    .navbar-collapse.show {
+        right: 0;
+    }
 }

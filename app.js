@@ -407,4 +407,41 @@ function makeMove(cell) {
     cell.removeEventListener("click", userPush);
     moves++;
     checkResult();
-  }
+}
+
+let toggler = document.querySelector("#switch");
+
+let navbar_toggler=document.querySelector(".navbar-toggler");
+navbar_toggler.addEventListener("click", ()=>{
+    toggler.style.marginTop = "-4rem";
+    toggler.classList.add("justify-content-center");
+})
+
+function toggleDarkMode() {
+    const pageContainer = document.getElementById('page-container');
+    pageContainer.classList.toggle('dark-mode');
+    document.querySelector("body").classList.toggle("dark-mode");
+
+    if(pageContainer.classList.contains("dark-mode")){
+        document.querySelector("#logo").src = "assets/logoDark.png";
+    } else{
+        document.querySelector("#logo").src = "assets/logo2.svg";
+    }
+    // Save the user's theme preference in local storage
+    const isDarkModeEnabled = pageContainer.classList.contains('dark-mode');
+    const isDarkModeEnabledForBody = document.querySelector("body").classList.contains('dark-mode');
+    
+    localStorage.setItem('dark-mode', isDarkModeEnabled);
+}
+
+// Check if the user has a preference stored in local storage
+const storedDarkMode = localStorage.getItem('dark-mode');
+if (storedDarkMode === 'true') {
+    document.getElementById('page-container').classList.add('dark-mode');
+    document.querySelector("body").classList.add("dark-mode");
+    document.querySelector("#logo").src = "assets/logoDark.png";
+}
+
+// Event listener for the dark mode toggle button
+const darkModeToggle = document.getElementById('dark-mode-toggle');
+darkModeToggle.addEventListener('change', toggleDarkMode);
